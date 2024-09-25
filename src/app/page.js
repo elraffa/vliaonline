@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
+    <div className={`container ${styles.page}`}>
       <h1>Villa Lia Online</h1>
     </div>
   );

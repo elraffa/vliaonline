@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import styles from './page.module.css';
 
 function Home() {
   const [jobs, setJobs] = useState([]);
@@ -12,16 +13,15 @@ function Home() {
   }, []);
 
   return (
-    <div>
-      <h1>Avisos</h1>
-      <a href='/avisos/nuevo'>Nuevo aviso</a>
-      <ul>
+    <div className={`${styles.container}`}>
+      <h1 className={styles.title}>Avisos</h1>
+      <a href='/avisos/nuevo' className={styles.newJobLink}>Nuevo aviso</a>
+      <ul className={styles.jobList}>
         {jobs.map(job => (
-          <li key={job._id}>{job.title}</li>
+          <li key={job._id} className={styles.jobItem}>{job.title}</li>
         ))}
       </ul>
     </div>
   );
 }
-
 export default Home;
